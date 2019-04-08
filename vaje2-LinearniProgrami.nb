@@ -1,0 +1,1872 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     72163,       1863]
+NotebookOptionsPosition[     67902,       1715]
+NotebookOutlinePosition[     68459,       1736]
+CellTagsIndexPosition[     68354,       1731]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Razporeditev sredstev", "Section"],
+
+Cell["\<\
+Podjetje ima tri oddelke, ki poslujejo z: 30% dobi\[CHacek]kom, 20% dobi\
+\[CHacek]kom in brez dobi\[CHacek]ka. Med oddelke \[ZHacek]elimo razporediti \
+40.000 evrov sredstev, pri \[CHacek]emer mora 1. oddelek prejeti vsaj 8.000 \
+evrov, 2. oddelek vsaj 10.000 evrov in 3. oddelek najve\[CHacek] dvakrat \
+toliko kot 2. oddelek. Kako naj razporedimo sredstva, da bomo dobili \
+\[CHacek]imve\[CHacek] dobi\[CHacek]ka?\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Maximize", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"0.3", "x1"}], "+", 
+      RowBox[{"0.2", "x2"}]}], ",", 
+     RowBox[{"x1", "\[GreaterEqual]", "8000"}], ",", 
+     RowBox[{"x2", "\[GreaterEqual]", " ", "10000"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "2"}], "x2"}], "+", "x3"}], "\[LessEqual]", " ", "0"}], 
+     ",", 
+     RowBox[{
+      RowBox[{"x1", "+", "x2", "+", "x3"}], "\[LessEqual]", " ", "40000"}], 
+     ",", 
+     RowBox[{"x1", "\[GreaterEqual]", "0"}], ",", 
+     RowBox[{"x2", "\[GreaterEqual]", "0"}], ",", 
+     RowBox[{"x3", "\[GreaterEqual]", " ", "0"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x1", ",", "x2", ",", "x3"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.666408227889926*^9, 3.6664082837899084`*^9}, {
+  3.666408321248135*^9, 3.6664084114532638`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"11000.`", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"x1", "\[Rule]", "30000.`"}], ",", 
+     RowBox[{"x2", "\[Rule]", "10000.`"}], ",", 
+     RowBox[{"x3", "\[Rule]", "0.`"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.666408412625202*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Re\[SHacek]itev", "Subsection"],
+
+Cell[BoxData[
+ RowBox[{"Maximize", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"0.3", "x"}], "+", 
+      RowBox[{"0.2", "y"}]}], ",", 
+     RowBox[{"x", "\[GreaterEqual]", "8"}], ",", 
+     RowBox[{"y", "\[GreaterEqual]", "10"}], ",", 
+     RowBox[{"z", "\[LessEqual]", 
+      RowBox[{"2", "y"}]}], ",", 
+     RowBox[{"x", "\[GreaterEqual]", "0"}], ",", 
+     RowBox[{"y", "\[GreaterEqual]", "0"}], ",", 
+     RowBox[{"z", "\[GreaterEqual]", "0"}], ",", 
+     RowBox[{
+      RowBox[{"x", "+", "y", "+", "z"}], "\[LessEqual]", "40"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}]], "Input"],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{{3.666408298198108*^9, 3.6664083116530886`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Grafi\[CHacek]no re\[SHacek]evanje", "Section"],
+
+Cell[TextData[{
+ "Grafi\[CHacek]no in z uporabo ukaza ",
+ StyleBox["Minimize", "Input"],
+ " re\[SHacek]ite linearni problem, podan z:"
+}], "Text"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"x", "+", 
+   RowBox[{"2", "y"}]}], "\[GreaterEqual]", "1"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"2", "x"}], "+", "y"}], "\[GreaterEqual]", 
+  "1"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"2", "x"}], "-", "y"}], "\[LessEqual]", "1"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"min", " ", "x"}], "+", "y"}]}], "DisplayFormula"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Minimize", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"x", "+", "y"}], ",", 
+     RowBox[{
+      RowBox[{"x", "+", 
+       RowBox[{"2", "y"}]}], "\[GreaterEqual]", "1"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"2", "x"}], "+", "y"}], "\[GreaterEqual]", "1"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"2", "x"}], "-", "y"}], "\[LessEqual]", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.666408498719159*^9, 3.66640850035989*^9}, {
+  3.6664085306587825`*^9, 3.666408575724167*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   FractionBox["2", "3"], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"x", "\[Rule]", 
+      FractionBox["1", "3"]}], ",", 
+     RowBox[{"y", "\[Rule]", 
+      FractionBox["1", "3"]}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.6664085763023286`*^9}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.666408576255453*^9, 3.666408577458671*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Re\[SHacek]itev", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Show", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"RegionPlot", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"x", "+", 
+          RowBox[{"2", "y"}]}], "\[GreaterEqual]", "1"}], "&&", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"2", "x"}], "+", "y"}], "\[GreaterEqual]", "1"}], "&&", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"2", "x"}], "-", "y"}], "\[LessEqual]", "1"}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "0", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"y", ",", "0", ",", "1"}], "}"}]}], "]"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"ContourPlot", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"x", "+", 
+           RowBox[{"2", "y"}]}], "\[Equal]", "1"}], ",", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"2", "x"}], "+", "y"}], "\[Equal]", "1"}], ",", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"2", "x"}], "-", "y"}], "\[Equal]", "1"}], ",", 
+         RowBox[{
+          RowBox[{"x", "+", "y"}], "\[Equal]", "k"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "0", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"y", ",", "0", ",", "1"}], "}"}]}], "]"}]}], 
+    "\[IndentingNewLine]", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"k", ",", 
+     RowBox[{"-", "3"}], ",", "3", ",", "0.01"}], "}"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`k$$ = 0.6800000000000002, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`k$$], -3, 3, 0.01}}, Typeset`size$$ = {
+    360., {177., 181.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`k$1092$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`k$$ = -3}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`k$$, $CellContext`k$1092$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        RegionPlot[
+         And[$CellContext`x + 2 $CellContext`y >= 1, 
+          2 $CellContext`x + $CellContext`y >= 1, 
+          2 $CellContext`x - $CellContext`y <= 1], {$CellContext`x, 0, 
+          1}, {$CellContext`y, 0, 1}], 
+        ContourPlot[{$CellContext`x + 2 $CellContext`y == 1, 
+          2 $CellContext`x + $CellContext`y == 1, 
+          2 $CellContext`x - $CellContext`y == 
+          1, $CellContext`x + $CellContext`y == $CellContext`k$$}, \
+{$CellContext`x, 0, 1}, {$CellContext`y, 0, 1}]], 
+      "Specifications" :> {{$CellContext`k$$, -3, 3, 0.01}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{411., {222., 229.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.66640862119592*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"Minimize", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"x", "+", "y"}], ",", 
+     RowBox[{
+      RowBox[{"x", "+", 
+       RowBox[{"2", "y"}]}], "\[GreaterEqual]", "1"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"2", "x"}], "+", "y"}], "\[GreaterEqual]", "1"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"2", "x"}], "-", "y"}], "\[LessEqual]", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y"}], "}"}]}], "]"}]], "Input"],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{3.666408595006688*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Proizvodnja fotoaparatov", "Section"],
+
+Cell["\<\
+Fotografski zanesenjak Niko N. je tik pred prazniki ustanovil s.p., v katerem \
+bo proizvajal dve vrsti fotoaparatov: Minimum 3 in Optimum 7. Za vsak aparat \
+Minimum 3 potrebuje 3 ure dela in material, vreden 70 evrov, za vsak Optimum \
+7 pa za 180 evrov materiala in 5 ur dela. Optimum 7 lahko proda za 300 evrov, \
+Minimum 3 pa za 130 evrov. Katere fotoaparate naj naredi Niko, \[CHacek]e ima \
+2100 evrov za\[CHacek]etnega kapitala, s katerim lahko nakupi material, do \
+praznikov pa ima le \[SHacek]e 71 ur \[CHacek]asa?\
+\>", "Text"],
+
+Cell[TextData[{
+ "Nalogo re\[SHacek]ite tako z ukaz ",
+ StyleBox["Maximize", "Input"],
+ " kot z ukazom ",
+ StyleBox["LinearProgramming", "Input"],
+ "."
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell["Re\[SHacek]itev", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Maximize", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"120", "opt"}], "+", 
+      RowBox[{"60", "min"}]}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"5", "opt"}], "+", 
+       RowBox[{"3", "min"}]}], "\[LessEqual]", "71"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"180", "opt"}], "+", 
+       RowBox[{"70", "min"}]}], "\[LessEqual]", "2100"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"opt", ",", "min"}], "}"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1560", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"opt", "\[Rule]", "7"}], ",", 
+     RowBox[{"min", "\[Rule]", "12"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.66640940375467*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LinearProgramming", "[", 
+  RowBox[{
+   RowBox[{"-", 
+    RowBox[{"{", 
+     RowBox[{"120", ",", "60"}], "}"}]}], ",", 
+   RowBox[{"-", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"5", ",", "3"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"180", ",", "70"}], "}"}]}], "}"}]}], ",", 
+   RowBox[{"-", 
+    RowBox[{"{", 
+     RowBox[{"71", ",", "2100"}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.666409408551878*^9, 3.6664094107082806`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"7", ",", "12"}], "}"}]], "Output",
+ CellChangeTimes->{3.6664094113177004`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "LinearProgramming"}]], "Input",
+ CellChangeTimes->{{3.666409622230939*^9, 3.666409636060066*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\\!\\(\\*RowBox[{\\\"LinearProgramming\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"c\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"m\\\", \
+\\\"TI\\\"], \\\",\\\", StyleBox[\\\"b\\\", \\\"TI\\\"]}], \\\"]\\\"}]\\) \
+finds a vector \\!\\(\\*StyleBox[\\\"x\\\", \\\"TI\\\"]\\) that minimizes the \
+quantity \\!\\(\\*RowBox[{StyleBox[\\\"c\\\", \\\"TI\\\"], \\\".\\\", \
+StyleBox[\\\"x\\\", \\\"TI\\\"]}]\\) subject to the constraints \
+\\!\\(\\*RowBox[{StyleBox[\\\"m\\\", \\\"TI\\\"], \\\".\\\", StyleBox[\\\"x\\\
+\", \\\"TI\\\"], \\\"\[GreaterEqual]\\\", StyleBox[\\\"b\\\", \
+\\\"TI\\\"]}]\\) and \\!\\(\\*RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\"\
+\[GreaterEqual]\\\", \\\"0\\\"}]\\). \
+\\n\\!\\(\\*RowBox[{\\\"LinearProgramming\\\", \\\"[\\\", RowBox[{StyleBox[\\\
+\"c\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"m\\\", \\\"TI\\\"], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"{\\\", \
+RowBox[{SubscriptBox[StyleBox[\\\"b\\\", \\\"TI\\\"], StyleBox[\\\"1\\\", \
+\\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"s\\\", \\\"TI\\\"], \
+StyleBox[\\\"1\\\", \\\"TR\\\"]]}], \\\"}\\\"}], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{SubscriptBox[StyleBox[\\\"b\\\", \\\"TI\\\"], \
+StyleBox[\\\"2\\\", \\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"s\\\", \
+\\\"TI\\\"], StyleBox[\\\"2\\\", \\\"TR\\\"]]}], \\\"}\\\"}], \\\",\\\", \
+StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) \
+finds a vector \\!\\(\\*StyleBox[\\\"x\\\", \\\"TI\\\"]\\) that minimizes \\!\
+\\(\\*RowBox[{StyleBox[\\\"c\\\", \\\"TI\\\"], \\\".\\\", StyleBox[\\\"x\\\", \
+\\\"TI\\\"]}]\\) subject to \\!\\(\\*RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \
+\\\"\[GreaterEqual]\\\", \\\"0\\\"}]\\) and linear constraints specified by \
+the matrix \\!\\(\\*StyleBox[\\\"m\\\", \\\"TI\\\"]\\) and the pairs \
+\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{SubscriptBox[StyleBox[\\\"b\\\", \\\"TI\\\
+\"], StyleBox[\\\"i\\\", \\\"TI\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"s\
+\\\", \\\"TI\\\"], StyleBox[\\\"i\\\", \\\"TI\\\"]]}], \\\"}\\\"}]\\). For \
+each row \\!\\(\\*SubscriptBox[StyleBox[\\\"m\\\", \\\"TI\\\"], \
+StyleBox[\\\"i\\\", \\\"TI\\\"]]\\) of \\!\\(\\*StyleBox[\\\"m\\\", \
+\\\"TI\\\"]\\), the corresponding constraint is \
+\\!\\(\\*RowBox[{RowBox[{SubscriptBox[StyleBox[\\\"m\\\", \\\"TI\\\"], \
+StyleBox[\\\"i\\\", \\\"TI\\\"]], \\\".\\\", StyleBox[\\\"x\\\", \
+\\\"TI\\\"]}], \\\"\[GreaterEqual]\\\", SubscriptBox[StyleBox[\\\"b\\\", \
+\\\"TI\\\"], StyleBox[\\\"i\\\", \\\"TI\\\"]]}]\\) if \
+\\!\\(\\*RowBox[{SubscriptBox[StyleBox[\\\"s\\\", \\\"TI\\\"], StyleBox[\\\"i\
+\\\", \\\"TI\\\"]], \\\"==\\\", \\\"1\\\"}]\\), or \
+\\!\\(\\*RowBox[{RowBox[{SubscriptBox[StyleBox[\\\"m\\\", \\\"TI\\\"], \
+StyleBox[\\\"i\\\", \\\"TI\\\"]], \\\".\\\", StyleBox[\\\"x\\\", \
+\\\"TI\\\"]}], \\\"==\\\", SubscriptBox[StyleBox[\\\"b\\\", \\\"TI\\\"], \
+StyleBox[\\\"i\\\", \\\"TI\\\"]]}]\\) if \
+\\!\\(\\*RowBox[{SubscriptBox[StyleBox[\\\"s\\\", \\\"TI\\\"], StyleBox[\\\"i\
+\\\", \\\"TI\\\"]], \\\"==\\\", \\\"0\\\"}]\\), or \
+\\!\\(\\*RowBox[{RowBox[{SubscriptBox[StyleBox[\\\"m\\\", \\\"TI\\\"], \
+StyleBox[\\\"i\\\", \\\"TI\\\"]], \\\".\\\", StyleBox[\\\"x\\\", \
+\\\"TI\\\"]}], \\\"\[LessEqual]\\\", SubscriptBox[StyleBox[\\\"b\\\", \
+\\\"TI\\\"], StyleBox[\\\"i\\\", \\\"TI\\\"]]}]\\) if \
+\\!\\(\\*RowBox[{SubscriptBox[StyleBox[\\\"s\\\", \\\"TI\\\"], StyleBox[\\\"i\
+\\\", \\\"TI\\\"]], \\\"==\\\", RowBox[{\\\"-\\\", \\\"1\\\"}]}]\\). \
+\\n\\!\\(\\*RowBox[{\\\"LinearProgramming\\\", \\\"[\\\", RowBox[{StyleBox[\\\
+\"c\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"m\\\", \\\"TI\\\"], \\\",\\\", \
+StyleBox[\\\"b\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"l\\\", \
+\\\"TI\\\"]}], \\\"]\\\"}]\\) minimizes \\!\\(\\*RowBox[{StyleBox[\\\"c\\\", \
+\\\"TI\\\"], \\\".\\\", StyleBox[\\\"x\\\", \\\"TI\\\"]}]\\) subject to the \
+constraints specified by \\!\\(\\*StyleBox[\\\"m\\\", \\\"TI\\\"]\\) and \
+\\!\\(\\*StyleBox[\\\"b\\\", \\\"TI\\\"]\\) and \
+\\!\\(\\*RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\"\[GreaterEqual]\\\", \
+StyleBox[\\\"l\\\", \\\"TI\\\"]}]\\). \
+\\n\\!\\(\\*RowBox[{\\\"LinearProgramming\\\", \\\"[\\\", RowBox[{StyleBox[\\\
+\"c\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"m\\\", \\\"TI\\\"], \\\",\\\", \
+StyleBox[\\\"b\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{SubscriptBox[StyleBox[\\\"l\\\", \\\"TI\\\"], StyleBox[\\\"1\\\", \
+\\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"l\\\", \\\"TI\\\"], \
+StyleBox[\\\"2\\\", \\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\
+\"TR\\\"]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) minimizes \
+\\!\\(\\*RowBox[{StyleBox[\\\"c\\\", \\\"TI\\\"], \\\".\\\", StyleBox[\\\"x\\\
+\", \\\"TI\\\"]}]\\) subject to the constraints specified by \
+\\!\\(\\*StyleBox[\\\"m\\\", \\\"TI\\\"]\\) and \\!\\(\\*StyleBox[\\\"b\\\", \
+\\\"TI\\\"]\\) and \\!\\(\\*RowBox[{SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\
+\"], StyleBox[\\\"i\\\", \\\"TI\\\"]], \\\"\[GreaterEqual]\\\", \
+SubscriptBox[StyleBox[\\\"l\\\", \\\"TI\\\"], StyleBox[\\\"i\\\", \
+\\\"TI\\\"]]}]\\). \\n\\!\\(\\*RowBox[{\\\"LinearProgramming\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"c\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"m\\\", \
+\\\"TI\\\"], \\\",\\\", StyleBox[\\\"b\\\", \\\"TI\\\"], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"{\\\", \
+RowBox[{SubscriptBox[StyleBox[\\\"l\\\", \\\"TI\\\"], StyleBox[\\\"1\\\", \
+\\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"u\\\", \\\"TI\\\"], \
+StyleBox[\\\"1\\\", \\\"TR\\\"]]}], \\\"}\\\"}], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{SubscriptBox[StyleBox[\\\"l\\\", \\\"TI\\\"], \
+StyleBox[\\\"2\\\", \\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"u\\\", \
+\\\"TI\\\"], StyleBox[\\\"2\\\", \\\"TR\\\"]]}], \\\"}\\\"}], \\\",\\\", \
+StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) \
+minimizes \\!\\(\\*RowBox[{StyleBox[\\\"c\\\", \\\"TI\\\"], \\\".\\\", \
+StyleBox[\\\"x\\\", \\\"TI\\\"]}]\\) subject to the constraints specified by \
+\\!\\(\\*StyleBox[\\\"m\\\", \\\"TI\\\"]\\) and \\!\\(\\*StyleBox[\\\"b\\\", \
+\\\"TI\\\"]\\) and \\!\\(\\*RowBox[{SubscriptBox[StyleBox[\\\"l\\\", \\\"TI\\\
+\"], StyleBox[\\\"i\\\", \\\"TI\\\"]], \\\"\[LessEqual]\\\", \
+SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"i\\\", \
+\\\"TI\\\"]], \\\"\[LessEqual]\\\", SubscriptBox[StyleBox[\\\"u\\\", \\\"TI\\\
+\"], StyleBox[\\\"i\\\", \\\"TI\\\"]]}]\\). \
+\\n\\!\\(\\*RowBox[{\\\"LinearProgramming\\\", \\\"[\\\", RowBox[{StyleBox[\\\
+\"c\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"m\\\", \\\"TI\\\"], \\\",\\\", \
+StyleBox[\\\"b\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"lu\\\", \\\"TI\\\"], \
+\\\",\\\", StyleBox[\\\"dom\\\", \\\"TI\\\"]}], \\\"]\\\"}]\\) takes the \
+elements of \\!\\(\\*StyleBox[\\\"x\\\", \\\"TI\\\"]\\) to be in the domain \
+\\!\\(\\*StyleBox[\\\"dom\\\", \\\"TI\\\"]\\), either Reals or \
+Integers.\\n\\!\\(\\*RowBox[{\\\"LinearProgramming\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"c\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"m\\\", \
+\\\"TI\\\"], \\\",\\\", StyleBox[\\\"b\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\
+\\\"lu\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{SubscriptBox[StyleBox[\\\"dom\\\", \\\"TI\\\"], StyleBox[\\\"1\\\", \
+\\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"dom\\\", \\\"TI\\\"], \
+StyleBox[\\\"2\\\", \\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\
+\"TR\\\"]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) takes \
+\\!\\(\\*SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"i\\\", \\\
+\"TI\\\"]]\\) to be in the domain \\!\\(\\*SubscriptBox[StyleBox[\\\"dom\\\", \
+\\\"TI\\\"], StyleBox[\\\"i\\\", \\\"TI\\\"]]\\).\"\>", "MSG"], 
+  "\[NonBreakingSpace]", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/LinearProgramming"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.666409668828068*^9},
+ CellTags->"Info-66b47ace-1561-4394-9798-5bf339bf2584"]
+}, Open  ]],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{3.6664093587960215`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Grafi\[CHacek]na analiza proizvodnje fotoaparatov", "Section"],
+
+Cell["\<\
+Nikov problem poskusite re\[SHacek]iti \[SHacek]e grafi\[CHacek]no. Ko ga re\
+\[SHacek]ite, spreminjajte parametre in opazujte, kako se s tem spreminja mno\
+\[ZHacek]ica dopustnih re\[SHacek]itev ter naklon grafa kriterijske funkcije.\
+\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell["Re\[SHacek]itev", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Column", "[", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"optimumUre", " ", "opt"}], " ", "+", " ", 
+        RowBox[{"minimumUre", " ", "min"}]}], " ", "\[LessEqual]", " ", 
+       "cas"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"optimumStrosek", " ", "opt"}], " ", "+", " ", 
+        RowBox[{"minimumStrosek", " ", "min"}]}], " ", "\[LessEqual]", " ", 
+       "kapital"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"optimumCena", "-", "optimumStrosek"}], ")"}], "opt"}], "+", 
+       
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"minimumCena", "-", "minimumStrosek"}], ")"}], "min"}]}], 
+      ",", "\[IndentingNewLine]", 
+      RowBox[{"Show", "[", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"RegionPlot", "[", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"optimumUre", " ", "opt"}], " ", "+", " ", 
+             RowBox[{"minimumUre", " ", "min"}]}], " ", "\[LessEqual]", " ", 
+            "cas"}], "&&", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"optimumStrosek", " ", "opt"}], " ", "+", " ", 
+             RowBox[{"minimumStrosek", " ", "min"}]}], " ", "\[LessEqual]", 
+            " ", "kapital"}]}], ",", 
+          RowBox[{"{", 
+           RowBox[{"opt", ",", "0", ",", "20"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"min", ",", "0", ",", "30"}], "}"}]}], "]"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"ContourPlot", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"optimumCena", "-", "optimumStrosek"}], ")"}], "opt"}], 
+            "+", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"minimumCena", "-", "minimumStrosek"}], ")"}], 
+             "min"}]}], "\[Equal]", "dobicek"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"opt", ",", "0", ",", "20"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"min", ",", "0", ",", "30"}], "}"}]}], "]"}]}], 
+       "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "}"}], "\[IndentingNewLine]", "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"optimumUre", ",", "5"}], "}"}], ",", "0", ",", "10", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"minimumUre", ",", "3"}], "}"}], ",", "0", ",", "10", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"optimumStrosek", ",", "180"}], "}"}], ",", "0", ",", "300", 
+     ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"minimumStrosek", ",", "70"}], "}"}], ",", "0", ",", "300", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"optimumCena", ",", "300"}], "}"}], ",", "0", ",", "1000", ",", 
+     
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"minimumCena", ",", "130"}], "}"}], ",", "0", ",", "1000", ",", 
+     
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"kapital", ",", "2100"}], "}"}], ",", "0", ",", "5000", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"cas", ",", "71"}], "}"}], ",", "0", ",", "200", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"dobicek", ",", "0"}], "}"}], ",", "0", ",", "3000", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}]}], 
+  "\[IndentingNewLine]", "]"}]], "Input"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`cas$$ = 
+    70.01749038696289, $CellContext`dobicek$$ = 
+    2709.5458030700684`, $CellContext`kapital$$ = 
+    4349.9999999999945`, $CellContext`minimumCena$$ = 
+    130, $CellContext`minimumStrosek$$ = 70, $CellContext`minimumUre$$ = 
+    1.6, $CellContext`optimumCena$$ = 300, $CellContext`optimumStrosek$$ = 
+    180, $CellContext`optimumUre$$ = 5, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`optimumUre$$], 5}, 0, 10}, {{
+       Hold[$CellContext`minimumUre$$], 3}, 0, 10}, {{
+       Hold[$CellContext`optimumStrosek$$], 180}, 0, 300}, {{
+       Hold[$CellContext`minimumStrosek$$], 70}, 0, 300}, {{
+       Hold[$CellContext`optimumCena$$], 300}, 0, 1000}, {{
+       Hold[$CellContext`minimumCena$$], 130}, 0, 1000}, {{
+       Hold[$CellContext`kapital$$], 2100}, 0, 5000}, {{
+       Hold[$CellContext`cas$$], 71}, 0, 200}, {{
+       Hold[$CellContext`dobicek$$], 0}, 0, 3000}}, Typeset`size$$ = {
+    180., {110., 117.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`optimumUre$25806$$ = 
+    0, $CellContext`minimumUre$25807$$ = 
+    0, $CellContext`optimumStrosek$25808$$ = 
+    0, $CellContext`minimumStrosek$25809$$ = 
+    0, $CellContext`optimumCena$25810$$ = 
+    0, $CellContext`minimumCena$25811$$ = 0, $CellContext`kapital$25812$$ = 
+    0, $CellContext`cas$25813$$ = 0, $CellContext`dobicek$25814$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`cas$$ = 71, $CellContext`dobicek$$ = 
+        0, $CellContext`kapital$$ = 2100, $CellContext`minimumCena$$ = 
+        130, $CellContext`minimumStrosek$$ = 70, $CellContext`minimumUre$$ = 
+        3, $CellContext`optimumCena$$ = 300, $CellContext`optimumStrosek$$ = 
+        180, $CellContext`optimumUre$$ = 5}, "ControllerVariables" :> {
+        Hold[$CellContext`optimumUre$$, $CellContext`optimumUre$25806$$, 0], 
+        Hold[$CellContext`minimumUre$$, $CellContext`minimumUre$25807$$, 0], 
+        Hold[$CellContext`optimumStrosek$$, \
+$CellContext`optimumStrosek$25808$$, 0], 
+        Hold[$CellContext`minimumStrosek$$, \
+$CellContext`minimumStrosek$25809$$, 0], 
+        Hold[$CellContext`optimumCena$$, $CellContext`optimumCena$25810$$, 0], 
+        Hold[$CellContext`minimumCena$$, $CellContext`minimumCena$25811$$, 0], 
+        Hold[$CellContext`kapital$$, $CellContext`kapital$25812$$, 0], 
+        Hold[$CellContext`cas$$, $CellContext`cas$25813$$, 0], 
+        Hold[$CellContext`dobicek$$, $CellContext`dobicek$25814$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Column[{$CellContext`optimumUre$$ $CellContext`opt + \
+$CellContext`minimumUre$$ $CellContext`min <= $CellContext`cas$$, \
+$CellContext`optimumStrosek$$ $CellContext`opt + \
+$CellContext`minimumStrosek$$ $CellContext`min <= $CellContext`kapital$$, \
+($CellContext`optimumCena$$ - $CellContext`optimumStrosek$$) $CellContext`opt + \
+($CellContext`minimumCena$$ - $CellContext`minimumStrosek$$) $CellContext`min, 
+         Show[
+          RegionPlot[
+           
+           And[$CellContext`optimumUre$$ $CellContext`opt + \
+$CellContext`minimumUre$$ $CellContext`min <= $CellContext`cas$$, \
+$CellContext`optimumStrosek$$ $CellContext`opt + \
+$CellContext`minimumStrosek$$ $CellContext`min <= $CellContext`kapital$$], \
+{$CellContext`opt, 0, 20}, {$CellContext`min, 0, 30}], 
+          
+          ContourPlot[($CellContext`optimumCena$$ - \
+$CellContext`optimumStrosek$$) $CellContext`opt + ($CellContext`minimumCena$$ - \
+$CellContext`minimumStrosek$$) $CellContext`min == $CellContext`dobicek$$, \
+{$CellContext`opt, 0, 20}, {$CellContext`min, 0, 30}]]}], 
+      "Specifications" :> {{{$CellContext`optimumUre$$, 5}, 0, 10, Appearance -> 
+         "Labeled"}, {{$CellContext`minimumUre$$, 3}, 0, 10, Appearance -> 
+         "Labeled"}, {{$CellContext`optimumStrosek$$, 180}, 0, 300, 
+         Appearance -> "Labeled"}, {{$CellContext`minimumStrosek$$, 70}, 0, 
+         300, Appearance -> "Labeled"}, {{$CellContext`optimumCena$$, 300}, 0,
+          1000, Appearance -> "Labeled"}, {{$CellContext`minimumCena$$, 130}, 
+         0, 1000, Appearance -> "Labeled"}, {{$CellContext`kapital$$, 2100}, 
+         0, 5000, Appearance -> "Labeled"}, {{$CellContext`cas$$, 71}, 0, 200,
+          Appearance -> "Labeled"}, {{$CellContext`dobicek$$, 0}, 0, 3000, 
+         Appearance -> "Labeled"}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{585., {176., 183.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.6664096756879406`*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Sestavljanje jedilnika", "Section"],
+
+Cell["\<\
+Z jedilnikom, sestavljenim iz \[ZHacek]ivil v spodnji tabeli \[ZHacek]elimo \
+zadostiti dnevnim potrebam po vsaj 2000 kCal energije, 55 g beljakovin in 800 \
+mg kalcija. Kaj naj pojemo, da bomo za \[ZHacek]ivila porabili \[CHacek]im \
+manj denarja, hkrati pa ne bomo jedli preve\[CHacek] enoli\[CHacek]ne hrane \
+(glej zadnji stolpec)?\
+\>", "Text",
+ CellChangeTimes->{{3.634894661602792*^9, 3.634894662879006*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"\[NoBreak]", GridBox[{
+     {
+      StyleBox["\[ZHacek]ivilo",
+       FontWeight->"Bold"], 
+      StyleBox["porcija",
+       FontWeight->"Bold"], 
+      StyleBox[
+       RowBox[{"energija", " ", 
+        RowBox[{"(", "kCal", ")"}]}],
+       FontWeight->"Bold"], 
+      StyleBox[
+       RowBox[{"beljakovine", " ", 
+        RowBox[{"(", 
+         StyleBox["g",
+          FontSlant->"Plain"], ")"}]}],
+       FontWeight->"Bold"], 
+      StyleBox[
+       RowBox[{"kalcij", " ", 
+        RowBox[{"(", "mg", ")"}]}],
+       FontWeight->"Bold"], 
+      StyleBox[
+       RowBox[{"cena", " ", 
+        RowBox[{"(", "\[Euro]", ")"}]}],
+       FontWeight->"Bold"], 
+      StyleBox[
+       RowBox[{"max", ".", " ", "\[SHacek]t", ".", " ", "porcij"}],
+       FontWeight->"Bold"]},
+     {"ka\[SHacek]a", 
+      RowBox[{"28", " ", 
+       StyleBox["g",
+        FontSlant->"Plain"]}], "110", "4", "2", "3", "4"},
+     {"pi\[SHacek]\[CHacek]anec", 
+      RowBox[{"100", " ", 
+       StyleBox["g",
+        FontSlant->"Plain"]}], "205", "32", "12", "24", "3"},
+     {"jajca", 
+      RowBox[{"2", " ", 
+       RowBox[{"kom", "."}]}], "160", "13", "54", "13", "2"},
+     {"mleko", 
+      RowBox[{"237", " ", 
+       SuperscriptBox["cm", "3"]}], "160", "8", "285", "9", "8"},
+     {"krem\[SHacek]nita", 
+      RowBox[{"170", " ", 
+       StyleBox["g",
+        FontSlant->"Plain"]}], "420", "4", "22", "20", "2"},
+     {"pasulj", 
+      RowBox[{"260", 
+       StyleBox[" ",
+        FontSlant->"Italic"], 
+       StyleBox["g",
+        FontSlant->"Plain"]}], "260", "14", "80", "19", "2"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]"}], 
+  TraditionalForm]], "Text",
+ CellChangeTimes->{{3.634894658326994*^9, 3.634894669860793*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Re\[SHacek]itev", "Subsection",
+ CellChangeTimes->{{3.6664103513983*^9, 3.666410353757806*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LinearProgramming", "[", 
+  RowBox[{
+   TagBox[
+    RowBox[{"{", 
+     RowBox[{"3", ",", "24", ",", "13", ",", "9", ",", "20", ",", "19"}], 
+     "}"}],
+    Function[BoxForm`e$, 
+     MatrixForm[BoxForm`e$]]], ",", 
+   TagBox[
+    RowBox[{"(", "\[NoBreak]", GridBox[{
+       {"110", "205", "160", "160", "420", "260"},
+       {"4", "32", "13", "8", "4", "14"},
+       {"2", "12", "54", "285", "22", "80"},
+       {"1", "0", "0", "0", "0", "0"},
+       {"0", "1", "0", "0", "0", "0"},
+       {"0", "0", "1", "0", "0", "0"},
+       {"0", "0", "0", "1", "0", "0"},
+       {"0", "0", "0", "0", "1", "0"},
+       {"0", "0", "0", "0", "0", "1"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+    Function[BoxForm`e$, 
+     MatrixForm[BoxForm`e$]]], ",", 
+   TagBox[
+    RowBox[{"(", "\[NoBreak]", GridBox[{
+       {"2000", "1"},
+       {"55", "1"},
+       {"800", "1"},
+       {"4", 
+        RowBox[{"-", "1"}]},
+       {"3", 
+        RowBox[{"-", "1"}]},
+       {"2", 
+        RowBox[{"-", "1"}]},
+       {"8", 
+        RowBox[{"-", "1"}]},
+       {"2", 
+        RowBox[{"-", "1"}]},
+       {"2", 
+        RowBox[{"-", "1"}]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+    Function[BoxForm`e$, 
+     MatrixForm[BoxForm`e$]]]}], "]"}]], "Input",
+ CellChangeTimes->{{3.602345449813953*^9, 3.60234546528813*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"4", ",", "0", ",", "0", ",", 
+   FractionBox["9", "2"], ",", "2", ",", "0"}], "}"}]], "Output",
+ CellChangeTimes->{3.666410415489006*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Minimize", "[", 
+  RowBox[{
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"3", "k"}], "+", 
+      RowBox[{"24", "p"}], "+", 
+      RowBox[{"13", "j"}], "+", 
+      RowBox[{"9", "m"}], "+", 
+      RowBox[{"20", "kr"}], "+", 
+      RowBox[{"19", "pa"}]}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"110", "k"}], "+", 
+       RowBox[{"205", "p"}], "+", 
+       RowBox[{"160", "j"}], "+", 
+       RowBox[{"160", "m"}], "+", 
+       RowBox[{"420", "kr"}], "+", 
+       RowBox[{"260", "pa"}]}], "\[GreaterEqual]", "2000"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"4", "k"}], "+", 
+       RowBox[{"32", "p"}], "+", 
+       RowBox[{"13", "j"}], "+", 
+       RowBox[{"8", "m"}], "+", 
+       RowBox[{"4", "kr"}], "+", 
+       RowBox[{"14", "pa"}]}], "\[GreaterEqual]", "55"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"2", "k"}], "+", 
+       RowBox[{"12", "p"}], "+", 
+       RowBox[{"54", "j"}], "+", 
+       RowBox[{"285", "m"}], "+", 
+       RowBox[{"22", "kr"}], "+", 
+       RowBox[{"80", "pa"}]}], "\[GreaterEqual]", "800"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"0", "\[LessEqual]", "k", "\[LessEqual]", "4"}], ",", 
+     RowBox[{"0", "\[LessEqual]", "p", "\[LessEqual]", "3"}], ",", 
+     RowBox[{"0", "\[LessEqual]", "j", "\[LessEqual]", "2"}], ",", 
+     RowBox[{"0", "\[LessEqual]", "m", "\[LessEqual]", "8"}], ",", 
+     RowBox[{"0", "\[LessEqual]", "kr", "\[LessEqual]", "2"}], ",", 
+     RowBox[{"0", "\[LessEqual]", "pa", "\[LessEqual]", "2"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"k", ",", "p", ",", "j", ",", "m", ",", "kr", ",", "pa"}], 
+    "}"}]}], "\[IndentingNewLine]", "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   FractionBox["185", "2"], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"k", "\[Rule]", "4"}], ",", 
+     RowBox[{"p", "\[Rule]", "0"}], ",", 
+     RowBox[{"j", "\[Rule]", "0"}], ",", 
+     RowBox[{"m", "\[Rule]", 
+      FractionBox["9", "2"]}], ",", 
+     RowBox[{"kr", "\[Rule]", "2"}], ",", 
+     RowBox[{"pa", "\[Rule]", "0"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.6664104192859898`*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Najve\[CHacek]ja v\[CHacek]rtana kro\[ZHacek]nica", "Section",
+ CellChangeTimes->{{3.602345938950485*^9, 3.602345942275596*^9}}],
+
+Cell["\<\
+Poi\[SHacek]\[CHacek]ite najve\[CHacek]jo kro\[ZHacek]nico, vsebovano v ve\
+\[CHacek]kotniku, podanem z ena\[CHacek]bami:\
+\>", "Text",
+ CellChangeTimes->{{3.602345242981418*^9, 3.602345258839021*^9}, {
+  3.602345946294542*^9, 3.602345947021247*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"-", "x"}], "+", "y"}], "\[LessEqual]", 
+  "4"}], "\[IndentingNewLine]", 
+ RowBox[{"y", "\[LessEqual]", "5"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"2", "x"}], "+", "y"}], "\[LessEqual]", 
+  "15"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   FractionBox["x", "2"], "+", "y"}], "\[GreaterEqual]", 
+  "1"}]}], "DisplayFormula"],
+
+Cell[TextData[{
+ "V pomo\[CHacek] naj vam bo, da je to\[CHacek]ka ",
+ Cell[BoxData[
+  FormBox["x", TraditionalForm]]],
+ " od hiperravnine z ena\[CHacek]bo ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["a", "T"], "x"}], "=", "b"}], TraditionalForm]]],
+ " oddaljena ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox["b", 
+     RowBox[{
+     "\[LeftDoubleBracketingBar]", "a", "\[RightDoubleBracketingBar]"}]], "-", 
+    FractionBox[
+     RowBox[{
+      SuperscriptBox["a", "T"], "x"}], 
+     RowBox[{
+     "\[LeftDoubleBracketingBar]", "a", "\[RightDoubleBracketingBar]"}]]}], 
+   TraditionalForm]]],
+ "."
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell["Re\[SHacek]itev", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"res", "=", 
+  RowBox[{"NMaximize", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"r", ",", 
+      RowBox[{"r", "\[LessEqual]", 
+       RowBox[{
+        FractionBox["4", 
+         SqrtBox["2"]], "-", 
+        FractionBox[
+         RowBox[{
+          RowBox[{"-", "x"}], "+", "y"}], 
+         SqrtBox["2"]]}]}], ",", 
+      RowBox[{"r", "\[LessEqual]", 
+       RowBox[{
+        FractionBox["5", "1"], "-", 
+        FractionBox["y", "1"]}]}], ",", 
+      RowBox[{"r", "\[LessEqual]", 
+       RowBox[{
+        FractionBox["15", 
+         SqrtBox["5"]], "-", 
+        FractionBox[
+         RowBox[{
+          RowBox[{"2", "x"}], "+", "y"}], 
+         SqrtBox["5"]]}]}], ",", 
+      RowBox[{"r", "\[LessEqual]", 
+       RowBox[{
+        FractionBox[
+         RowBox[{"-", "1"}], 
+         RowBox[{
+          SqrtBox["5"], "/", "2"}]], "-", 
+        FractionBox[
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "x"}], "/", "2"}], "-", "y"}], 
+         RowBox[{
+          SqrtBox["5"], "/", "2"}]]}]}], ",", 
+      RowBox[{"r", "\[GreaterEqual]", "0"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "y", ",", "r"}], "}"}]}], "]"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"2.6781472845828773`", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"x", "\[Rule]", "3.344813951249544`"}], ",", 
+     RowBox[{"y", "\[Rule]", "2.3218527154171227`"}], ",", 
+     RowBox[{"r", "\[Rule]", "2.6781472845828773`"}]}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.666411411178665*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"RegionPlot", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "x"}], "+", "y"}], "\[LessEqual]", "4"}], "&&", 
+      RowBox[{"y", "\[LessEqual]", "5"}], "&&", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"2", "x"}], "+", "y"}], "\[LessEqual]", "15"}], "&&", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"x", "/", "2"}], "+", "y"}], "\[GreaterEqual]", "1"}]}], ",", 
+     
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "5"}], ",", "10"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"y", ",", 
+       RowBox[{"-", "5"}], ",", "10"}], "}"}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"ContourPlot", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "x"}], "+", "y"}], "\[Equal]", "4"}], ",", 
+       RowBox[{"y", "\[Equal]", "5"}], ",", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"2", "x"}], "+", "y"}], "\[Equal]", "15"}], ",", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"x", "/", "2"}], "+", "y"}], "\[Equal]", "1"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "5"}], ",", "10"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"y", ",", 
+       RowBox[{"-", "5"}], ",", "10"}], "}"}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Graphics", "[", 
+    RowBox[{
+     RowBox[{"Circle", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"x", ",", "y"}], "}"}], ",", "r"}], "]"}], "/.", 
+     RowBox[{"res", "[", 
+      RowBox[{"[", "2", "]"}], "]"}]}], "]"}]}], "\[IndentingNewLine]", 
+  "]"}]], "Input"],
+
+Cell[BoxData[
+ GraphicsBox[{GraphicsComplexBox[CompressedData["
+1:eJx1WXlcE9faDovsYV8DCFgriAqKRiwucyR1qyKRS9VWwUrVa8WtuBT8VG5d
+olKrKBSVTy2hikoV3K5ryowWEFJLwYWoRQoYcEPFCCJrvlH7HOzw+df8nszM
+Oe953ufdJj4xSyLmGopEIp2BSPT6andrlJE6thf5uqJ+vTzakpvaf8kalaIn
+yZpe2Rov7sH1DG7zTtV4U5x0+ItGrdSVnDny473QhA526aP75+TR7hTjfWC8
+D5zXOyJWXGtHvDPXlaVoGtgD824HJoidKMb6wFgfGOsD3x+9KT/Wz5T4LUjr
+2KkpZU8W/BAmSxBTjP2AsR8w9gPGfsDYDzhz+Y05CeImxvXO4oOpmirGIy9+
+eKpGRIBhDzDsAYY9wLAHGPYAwx7g99kBLLzCPmDYBwz7gGEfMOwDhn3AsA8Y
+fsa+8BMw7BfyJrQTWHiF/cCwHxj2A8N+YNgvtE+oI6EfhbwJ7QAWXmEfMOwD
+hn3AsO99uhbqSuhHIS9CO4RX2AMMe96nW6FOhLwLzyncR3jFfsC7TT3tc5U+
+ZGv6XFYrNeO+/K7f/yp0HoRznjZUXGtA8xHu73rzvDN5/OGOz2P9mmn84vmr
+6623aOS2JHvEg+R4cS2Nfzz/FntT/DonikTGxOyTcWFpGo7yivdzqr87K0t4
+wuCK8+N52AuM9xa9qnkij26j8Yr3oT/cXzPhQLlE7UaAhXZhvbfnsiA4PzD2
+xbmxz4k353Cg6wJjXWCs809sS7HwCn+hPoBPnAt84Nw4H3iD/UI9Y308Bwx9
+AeM9YOgIeIbX1j3KET5k7fAjSonanHt0wTw71s+DnDqb7ipLMPpbT06k9N+u
+Xhp5K3vwjf02ZAX30k0e/Zi1maXyVMcakvFJtce2a46z96LWBCz0u8/giuc2
+n5nRt1b6irnx7FiSyqQX3Q/+wzlwH/rFvhEhC06qFJ2MidY8Ta9/QTH4xXp4
+HnZhPdRv8A/9A8M/4B92ASNvgzfoDBj+/P91ZkHzFPQF3Ql1j/fwOzD8/kd7
+8mKN3IvsafG5m6M04aonLzisiPOmGPGP88G/8Kdxwrpavd6VlKxwiNTIRbx3
+Cq9IUyUUD2taNtMv156AZ/+0s6OiZY4UQ684P+o/MOyD3+/UqLOUKjOS9/Up
+m9CEuyz7Rn+WFEMX6Ue5YavENxn4FRj8gy/kL2DoFXqDDlVBYRni2ud0HWDE
+E+Ia9QQY/EA/wjhHfgRGfCAuwAf4r5gRtlWp8qT8Yz/oy/ZNf+lC4wvxCT7H
+RA5cpZPYUT6hV+gR/sf7iH/opjFDViNN7UHjEzoCf+AF/MG/0Cvsx/tCHQv9
+CH9hH+gL93Eu8I24AYbOYDeex7mEunpfnAELdQf/Yz3wL1wPeRPnhn/BG/yP
+uAWG3uA3PA+/gmfEmTAvI95wH/6FfsAP9AkM/qAr3Mf5cT7Yh/OAX+Rf8CvM
+t7j/akNYvDS1id0cWGldKzWiuhPeT9uW3j9XadCtTkBfwn4EGHrBuvCXsD8B
+Bl/YB34Q+hEYOoBfwZuwXwEGD/Db+/I2MPiF3mEX7lcW3hihVL2i/MAuYV8F
+fcJO+O+f+rOgGOeEnfAv/I9zgDdg+AP5BPlUyD/iFPlOyDfiDvsK+QVP0IGQ
+T+QL/A7+Tk9ynKuz9uw2b9fr2mIV2eYc5vP2lIEdnnx9v9bvfz4teqffelDU
+o0KS59xtHvde8qQm5zMjzmNMc4RskW23eTu7/JdTOXatdD6v25RTFB/fwVYm
+BS/b+U7/duD1ZZhxtzmk7/7RMv1fj9jg+jKTzJlPu83D157FN9ipj9D6WVdT
+tmPBjVL21vX7Puff6Qd9gjJHS/y13ebZwP8E9fgli88ju66v14d3dpsnc8ad
+SRWveEXrZVxaQaLMuonR7fgiKuyd/hK8VJze+Z0u1IBkbj/ztTznOc23WO/w
+MKWjOsWU9Peet3Zj0A16TtSz0mv6slL+eSv57d3V7/Sr4CVOlbtPqRWT/p1i
+9dDIym5zfk/vWSkqiT2tr0GLrHUMf//C/JsnYwf0IoV7dhYUT7Pifg7bW6E3
+70nanTaM0JmYcH8Vf/8vv/MuJKb343nShXrWcWyiWj7fjlz1KIlUqHXszg3V
+63QBJkQTmW8R9dMt9mXL5mqF5AXzbXHuyFn3bjPC37HOVoOsF1KVnrky4OJx
+ud6LfDdj5WxlpykXduV3x1z3rvnquUFU/+J3+tX4Ean2gdE+RCZbNUT8wpBr
+P3LUNyHHjbCaf98qPmbAlVh8n6Goc6P9wcA++/croxzIg0Mn92vPv2QNN611
+yf3BgeZDj2VFj3+M65q/zIKVX+hSvMjpp8u3xI95yP72sVe/VDcLcoD0c4sd
+qGUXm1R55G6xoPlxwSrjIPWzVsY9ZHj/qxPzmZMdG51EpV19pfyAucMNvr4D
+92py26uI9SAHAvV5stEPmUensiq4wgvM6bvjA6dMfcr4L5+VZDM3n8bt05+W
+OOvS+Dy+8tIRzdU2Jsv7aZDqzEua7xbErJs8n8/nwCNO7dRIZG4k8XqFgUhn
+SI56/JxdnNLMxrRZ+eVKjUl/f49BUm0t2z/R/YRCYUE2eLdtaefrM/Ld1K8t
+HXIlzsTpzxaH3BQbYub3bPe4lgvMagMnz9xYW9K/cZrLpsx6ZrZsb7Uk1YEc
+7TM7KmFMC+MTcmZQgp7v013Y4NQXhgT4UfrvXOzH5hSf6VkxQfaDDcWjp6z4
+SvzCnuL9lcsKkvl6I5zvKlOYyapRlnQed7QdVKB9Yszhft6VuU8c+HyEfJrs
+OiZeEtJB82errd+82N0NtL+T/2fHmeLyrr7Ie+L0jJr//kHn6zntH6yu/bSa
+5u/znlP+9LtdRfN7UY/AUuWkJtqPGYc/H9/Cxzt0dPl1+o41Jkdd5GXPL9TR
+fgnvb13ld1uq6pqf06dazzjMx7NIFb4rRnaaEdbZt/6yJUdNen+j/u0xnU+R
+t8Af8g4w8gww8gYw8gRw6egBxmqtD8k+0bs5vq8p91+3q6cu8vxKlOnf/szz
+W5Hx0CdV7k38I23UKTZN7KX4zWUbeT7NBrdVvuLz2HX9xERVvCcR12fP7/tH
+KbM/d0vljzx/48+tSVKXVzFPfsm/IJdLSIB6zlq/bzqYc4sMJUN4/g6vUJ2e
+zdttunrkS62vC8lZGD5FFmVJ3tYbZzJqze1CW97ugEdPDpTz9aiu9xGL9Xw9
+6vW7/+VSLx/y5YYAfdRIC+5WsDKkMsWHLNnX8aHY15LD86hf8c7j2oqfupM9
+Iu+Vinojrubx4HptuQc56PZsr7TcmDu6c1icbp8TSW/pdScquI11nv/hl2KF
+Mznd75KvyqKDHT4h+3IGX69KXH3L7/L1ivWMvCZNtyYWWsvkqH5P2Ela5ztS
+KT+39D7gJP6qge3rHMwpXhmQhqxtfHSyrMEl20xVkREZqR3m0RBSwibLf+du
+8vVpU5/TVzpvlrKTQ+afi55Ry+B6uLaEGbq3nulZ3s8z83Q1g33yek9ZHB3e
+zBwfdtBM8Yjv23QnvUWrm5hs67HtX/H1KKlHWFwlr4uVGecHK7Ud7OrzG7+U
+iQ1I1e69PrrQ5+z4kan1kmhTkn81L7iTry8zk2QT9/M68R/TOdJq4zXW/lLm
+Cl2OmKTVh/S4JapiFmdO12v1duRtfXYir8Yfz+nD6wb9wbUh6wfqrllRvvE9
+oMHqjNEnfr2IzZXNv2hl5pxJkumAj7J8yJlroa5+kyw5m5UHH4R/1P17ReqW
+kZ8l7Guj3zNcI44MO8nnf/hl8+FZzdKMDmaF/cj1EuNm9p5lcIFyXRv9/hv/
+W75nbUEnE3eg/WKKaQftx5Kjg5ZIVa3s0s+LxyQoDcno+XbN2lwfai/2mz5n
+NqMxs+IWOhS0+uq7vn+hbyv9tHyRn8aQRHw6iU3xbaP9N/JL65RzW+TOZvR7
+R0DJEVFCgQGHuM1PHfos9OFLmheiJYMv+G7X0rw+7Lr74dull2kdaTUavS21
+ueu731v/dH1PQ/zCTmCs/09sSzHsAZ45vYSVuniRxNBDITpHU87+4a+fGNnz
+82/yxX+pPjDj0mSPKi6M8KH1FfGwP8T1+aHX/7+8qR98vh7gvFh5S8TtvMEO
+jS50Jafydp+Q5Iu4zycnWAVe5/Ol+Jhae82AK5SfOKZYYU9KVzhOUdQ1stvU
+C9ZPW+dA4NePx4Q1mU/xonkT8VJ8LH6w7+1StiBj+2ydlRfpvUe7pPjPKrZp
+z5gJ0RPMyPKKp2tytlSxm78/16iP4edUJ1JTnq+lcbN0btqkWcvKGKqb2vum
+nq2XmGijwoH7+f4cPCOeLtybMc2Rj6fqaLN9Cq072X153MKEmw0M4lqXEVqr
+6Gyg66SbDZlXe+kJE39p1MIgkRv1C+ItrkU98iM+3to8vr0lUbkS7QNSFGvV
+g+xMPHuoUNP1/QPxtkHU6Nuotfu7LjuR4a8CFok1tmTO2KlN8j7N1P+dWeeN
+RFoD6s8i/6KtmiFmFKfmlDvlbrSmOHBPXLgstqv+Cq/on01OLD8kWWfCZT2Z
+Ns7vp570exj60xED5vWUDRJxd76akCeP6Pr+BX0I/3+risj113AvWOu6EGmC
+Qdf3MNSrPgMmxGSsrmCT8qdPl802pXMW/C/8HyrouX+du0U5U5fwzVa/xCY6
+J+K5ml8PWQ7trWMCsh3zjvqU0O9X8C/WgX9gB/in/w/87XfwU5UZcUPZqKMY
+dQ14ZfaSOnmanmL4Gdjks7HtencTilH3aD2uiNyoWWhFMfwOHH580CZNdFf9
+JsmisvQ2D/Jo8pDt8jZjrujKjlLpHm9SM83SIDrQnNbzINtey8fy9Xy5lW7c
+r9nOZHTaRCtdZAdbYOnkmlotIc432r9RVBpy2Zvv5T3+zJb8vC2gNfRUA9uy
+yWS7KtmRpGVU3I1yb2E7Y+N8HFO9ydO1mqmxH7fQfmCYnUV+AN8P5L0ed+2N
+idxjbEb42FJ2plmDpTrRihgGJe6KevGARZwYG7hEDvWuZjAX5HxyNuAD0QbG
+MS1qrUrvSYqGtJf3vT6QRT/xoG0WF32rikFcu2z2G6Ee1ETnjqn1jcejUx4y
+mFMur9m1IDq2hQmILD8v10jIgh/3PpeHttD+I9lEermQ7z8K73xQFxXbyEbu
+lVvUFvcgL4/5X7CS1rMhlZoSuc6McJPc5Rf7/MV6v5mnrMh4+/AmbY4LmTDt
+cZIm1Jz2K32sI26s4PsV+csNucu/P8uaxNRN85PZkN1l01+JvrjONJUNtVZL
+7UjM0gnbcqfUMQ/iVjXoi+1JTOmVgQkKR7I0cMNkmc6e/B82y6Nw
+    "], {{
+      {RGBColor[0.368417, 0.506779, 0.709798], AbsoluteThickness[1.6], 
+       Opacity[0.3], EdgeForm[None], 
+       GraphicsGroupBox[{PolygonBox[CompressedData["
+1:eJxNWH2cz1UWvoewJFOqQWUQQt6HMJlSUpSVktK79whRbVJRBrNelrZtKpUN
+qyKpNiHyUmFCxruEys5OiMWuLbGv7bbPs88zn/zxzLnf+7v3nnvPec45906d
+fiN6DC+TUjoDf8pCzgVeB7oCG4FpwFPAG8A8oBuwGygPVAa+ACoB5wBvAvOB
+7sBeYA+QB7QGGgGXAlU9/kzgHeBtoAdQDPwByAf2ARlAdeAr4EtgPHABcLZ1
+XWjJ9d4Ffg/0BJ4DCry3r4ESYCLwRyATqA3UcbsasB/I8t7qWmcNoLH7awH1
+3Ef9i4FFQC/gIHAAmAzMAF72vmp4/9xrE69BvYdth1ZAC+vj2s28p4uBpqft
+sbn76lpW8/6WAg2BbGATUAQssy3zfbbLfCaeo633wbVzrI9rbwFWAXcDV9pP
+nLfSe8wFjrr/CqCd1+D82cAsn+NVYA7QEejgNdoAW4FC4F7gWq9BPV2Aq4Cr
+Ldt4j509v/S3ttZ5nefxtyFAb6BTEl/22S7kyBe2+TCgr+c9APTz2sOB/tb/
+c+CGJM7fmMT3ckncJ9/J75uS+F7Re2xsOw4F+vhMNydxjeNvSeJ+laQ4IGfJ
+A8ZNXhLvCXKW3C1wm7Fwa1IcnJ8UN7vdz/nkU3Wfaaj1Tre+KumneCA/b3Ob
+6zImyP0s24gcIq9KkuKBvLw9KW5q2tYdbXvqK+UdeV3P638DbAfuSIoDcp9c
+zPTata2PtrrUOpr4m7819XcNr1nX85r5N+pr7m/+1sLfnNPWfiDXGQMtPaed
+f2N8ZXs/1E0etrbuNv5u5D7ym7G7333Ul3PaWqXc5Fhyj9xlrDA22idxP8d7
+Y4zkes07ved61sk1SmOig9e6x3bmfMbHWuAa66BvO3ncdf7mvM7+5npd/D3H
+be71r0kcJg+nJvGb3P4uicPk3XHgL8A2YGaS7+n3Z5O4Tp4vSOI01zmVxEn6
+9pmkOGGM/D2JM/TzS0ncJW8XJvGP3Ps+KRYyfNZ2Pu8TSdxp4LGDkvh6CNgM
+jAFWAMuT8tJHthfnrgFWJ+WT9cC6pFxAG/Wx3Wijvu5jLiBnybUl9g39sgEY
+YNsxBwy0rXju+5Limfbt5/U4b7D9yr3c7zNR5xDr5Vr9PW+tfdnJawzzOtQ5
+PP2Uf0ZYP+36oP3HmH7YtmOsjUyqNbTxL+wP+uoh+3VKUgxeBIwGHvWau4Ad
+SbWBfY+5f4d9QPvT/4/Yl5/Z9pd4/JNAAGOT8mEZj3kcGJXEE/ZXAH7lcRyz
+0W3a8zfABOBnSfzLS8ppX7mffPs1MA44w33jPT7Dbfpwr8eUs81G+yy/TKp3
+ZyXV+klJPKRk3jsPeMHjOCbT45kLi91fxWvneQ8vej7nZnkd5rCGtjNzxSu2
+O21+0O2aPvdUn522mWb7PO02+wf6u6z1PuNz8ezP2ibkX4Ft9dukuwVjZJC/
+2X4+6a7Dsff5u7LPNN3nWuh1zvUc5nHGwxK361vOcLvAa55r28+3L3i+mT4j
+OTfP/mRsMg9ebjnb7d+5zXgZ7G+2GTPMWcxXG9y+3vJVt6nzTett4XWZYxkb
+rM3lbVu2y1jOdfs1r9PR/pxnn1K+4XZ36yC/7vccjv82qe6W8/oLrOuDpDvW
+Mve9lZQnGIe8b2Va8i5LjrHm8j5K/vT0N3mU73Ec82fgWFKeKLCfqlq+l5QX
+madZX0t5xzb5NtFrnmff0ZfMae+7Xd+S33d6vYX26edJuZ+1c7llts/I87Ge
+rk6qcbk+N3+7C/gwqf61P21+S8sVbh8B/uT5W/xbtve+2Ps/4nWyrWuN1ySX
+Pk7Kr7P8neOx1H23f2f/5T4L98w8ttVr5Vr3aq+5zjZmHv4kqdZeY/sXenyh
+f7vXY9d5TG+3O1mudz+5Su4yh3/q9vWW/B7gc2/xngu9v1zvt8h73plU74rc
+3mQ7M08whzI/jPEY9u9ye5RtssU2HOvx5CzrD++7nW2DrT7XMttrqUEOkFes
+w9u9n+Nus9awPuywriK3G3iPO9232W3ujTHB2KjgNbZ5/A7ve5TH7/Lcbd4P
+x7CesK6w7jAGeY8pvftSMqflJcUm+w55PNdknub9o/TOzDrB+H0ShWtAqH4V
+2t/0Le97/0i68x1zP/3C/M77cG2P42+s38ylrBP5nsN7T5Yl12E+vAVK2ofs
+3NO/sf959OWGeFQC/M06XkDfFaG7w42QbUM25O+nPOZk0tuGOZzvGtZL1oXx
+/mZNZA3j26e6x3/v7wkez7ETrbuW5/B9xLfCUZ8x13pLbMMTXr+i+752f773
+U82y2Hub5DHUcxPO0S7E+VNel3PH2S/04Qr8/nIoRiZB5of8/511U293n6X0
+7Ce8748xdliIY7RrT9t2PmTTUN3eCPloKAcuglwSqgefQD4UyoGLITeFYvYR
+yJGhO9Y+682wPOk9kI/fmlfkNuOE/O3q39jfw2fmeXe7n7Wjm89W0XOY0xta
+cp1etudJ61/k33r5zJxbyZzg+qw1e7wf6iEHybfSNwwl3z3MwcyzzA8P4HzD
+Q3fKH4GLQrV1GuTkUI6pCzkhdEekf662j45AdgvV8DWQc0J3uv8AF4bq6QjI
+B0N30yGQQ0N307KQNUP17h7IMqF7SiHkvNC9rCJkrVBdOA55c6gm74H8V9Id
+eT/a5UP33+aMs1B9LKH+0H25EXkXqsv7GPShO/JByK6he9NhyMqhnPcl5H+T
+7t3j0B4buvMegqwUuhdfxhgN1dBiyC7e/17Ia0P3uE8h3wndBz+CnB26z/am
+ja2XuYo5a4x9dNgc2Ox+5jHmJd4ja9qnB9ye4v7J9inn8o3JN+lRtw/7N/r6
+mPuZu1a6v5XnH7D+VebGSvP5G/NtpNu0z3Ts/crQO+ouyB+SzjuY/gm9VR6m
+z0Pvh3KQWaE7yfpQTDIe/wlcELqb5UD2C9X3VZAzQu+GFyE7hN5JL0FeFapj
+HUP5gjycwrGhN8lA+iH0DiCPGptLr4finDHeF7KKecucEc4bd0B+HnqDvQI5
+K1RvG4Z4Q87MDOUajr8kxBXy5OIQL8nJH8wD2uSE45TxSv/XNwdYf54K1aBd
+obPxXLdBbgv9H6cX5I7Q+5B1YGqoFuwM2YU2YdwUm3u3Q34WqvHbQ36ijx6D
+PDt0B7sVckvoXbo1VG/6oP04bRO6OzGOGziWGX8bHIOM6Q9Dcc08sTqUKz4I
+6abepaEzcP/LQmfg/muE6i7Py1xbwb6g/1eaA8tDPqD9a0NODNX9/uROKPbP
+h3widH/LgBzlMYMg/63Q/j936pg/54TOz7Mznz0dijXmnrWh/ENurjM/3w/Z
+iPapBjk6dK97DXJu6P3DutQqVJuKQraj3bJDOYL54a1QvWGtYawz1zDeN4dq
+P2sT68yYUK15F/K90LuIvBhkW/F8Z/qMC0P6qIt9td1Pe1S1TVhju4fqLNeu
+7vVbh3Ic45dnyvS5GAfM44yFZqF8ylxKex+3zRdAvh16BzKftQzlNNbSs3xG
+3nF6hO45TUL5l7n3fzoQtG0=
+          "]], PolygonBox[CompressedData["
+1:eJwtlVeMlmUQRmdEBQwGpakJNzQR6SgmapAmvSlFelsEBHSXaoUAEiC0pZeA
+C4SFEKQoRWkigiBeqCgiCSHGGGJCQIJ6J4RyHp69OJvzf9l/931nnpmvVkFR
+78IHImIyPAgvZcQ+2IKXQuK/w068PMzFn4eB+IewBX8GXsOXwyJ8MUzHB8Mj
++GSYig+AZ/FSWImvglswm8/v6n/BFH50hb7h72zHG0EffA30wq/BEXwI/Ij/
+AMPx8dAbvwEn8GEwC18AM8L/oy/+L3wX/s4OvAn0w9dBJZ0VpoXvOA+fDx/g
+T0NH/CJsx3vAo/gV+AKvB9vwrVA1fMdX8QuwDe8GVfHrcFy1hpl4HXi/7Hzt
+02eWfwQb8NrQXbWFDnhdWIKPhu74X7Af7w/T0s/ue7iWf8Jn4ZouxJ9K11o1
+6YL8AbtVO5iDD1IPwmf6ON1z9fo9WIJXTtdCPR6TPrPOWgTN8E9hvc6uzOCX
+YW+4JnvwFukslMBGvCSdrcXhu32Sdt2xE34Jdqj3UJyuiWoxEzbrLNATXyrS
+z+Sz4QXdHTbpd5XRdKaUpbnwK34OCvB3wtl4QncKZ0S1rQg1wzV+DL8Kh/Dm
+0Eae/u4oaIsfhkL8zXDtH4Jq4R6oFk3hjXBNlJ2Wqnk4Q8r24+m/rYz/rdlK
+Z/1YONvV4eVwxv/RbKSzfip8tp7p2dMZW+MH4e3wHZW9F2FoOIOv4F/CBHwk
+HMW/goW49sIufGc62+rp6+kdod0wDlakZ0izMx8OKIvQJbxDuqUzoSyMhW80
+m7AMrwAn8W9htWYJTms2YW24Zsfwr6E4vJ96pHuqXr6lGUtnSllaAGfw75Wh
+cM/24p+nZ00ZaKVZTe+KEXAW/yntqoFmoVz6LJqJ59IzoOxrB2hwxsOk8M6b
+kN4J2gV6VpjOrLJ6f6cqG2nXDhuGD0/XQhkYol7AGNUWaqR7ql4qg1XSGVDv
+1fNf8J/TvVJPNauD07tAM/sbfj6dRWXwSfw/1STck4fxIpgS3nkT0ztAs69n
+2vUN0mfRzr+jOvN5YnjGbsLo9KxrJ2m3/V+WFe24+uotzAn3uGF65jRr6nHj
+dGaUFfW4ebqH6p16Vis945ptZbBeeqY1y8qAdsHdsuxoJ4xQLdJZ0AwV6O7p
+bCrjOoveUXo36Uyd0+8gvXtUc+3y22XZ0k4fl97Z2tW6s2rXLj3LquE9jvXb
+Lg==
+          "]]}]}, {}, {}, {}, {}}, 
+     {RGBColor[0.368417, 0.506779, 0.709798], AbsoluteThickness[1.6], 
+      LineBox[CompressedData["
+1:eJwl00OQGDAYgNHd2ra3tm3btm3btm3btm3btm51X6eHN1/mTyanJKhpp6od
+AwMCAn4QZDGReSTlFt/NW2hLijGYMYwlLgNozkBaBf6/Z4gOIhnDqEs9ftq7
+rSVIznwWsoBDtCeQB6ShPg0IxkNKk5ZlrGA5x+lCaJ6RiYY0IgzPKUdm1rKe
+dZyhJxF5TQ4a04RIvKECOdnEFjZzlj5E5wN5aEozYvCRKuRlK9vZxjn6E4ev
+FGUvcyjCHupwg+vMpjC7qc01rjKLQuyiFle4zEwKspOaXOIiMyjADmpwgfNM
+Jz/V+UJs+hGLz1QjH1X5REz6Eo33VCY3lXhHVHoThbdUJBfjGM9oJhCZXoQn
+CSMZxXCyMZQRZOcVEehOD8rzgrAk5hSn2UAWprGRrLwkHF3pRlmeEJJEnOAk
+q8nAVNaQkaeEohOdKcMjgpOQoxxjJemYwirS85gQdODfxyrFPf54+wn0MEdY
+Qioms5TU3CeAtrSjJHf4ZRxfD3CQRaRgEotJyV1+O9da21Ccm3wzi6f72M/c
+wP///C9TMn2D
+       "]]}}], GraphicsComplexBox[CompressedData["
+1:eJxlmFlsnFcVx8freF9mvC/xMnZTVUINL0FIgXtYSjOkFWrVPKC8NIgigeIU
+EFCKkJoHyAuIxQkICegDClI3QSmtk5JK96pFSFFCg9K0tHG2hkJDkxQncU3i
+xDb2+f/PmcxgRbnz++b77r1n+5/7zdgXHr7/oepMJvNIVSazNuKvTzBOyImZ
+qdmZS72y+v/U7EJB1oaZKfJMQU7q9z2yc42/VZAX9IsePDdVEB229eC5D5Fn
+u8GXxuUnE8XpiUPdsnl69cM75CJ537js0Bu7OA95I3nQvs9z3jE8N5EXnWZ6
+TAo65kQvF8m5nPx0jRvHZFy/7wQfGpXllbW/DtHhsVHa0QF7N47KH/VDO/0y
+Is8pt8lbet+IfEX300o/rOP8LZi/uE7GlJtp97CMKjfR7mF5U+dppF1DvN5A
+u4bkx8pZ+mdQfqRcL3fr94PyGR3raPcA7amBPSv9sqRjNa4/1i83lat4X588
+r/vO0O4+7mclwL+98oZ+WAJv65Xj+uFGsLh/Wte/HmBvD+dbCMiXbvprPiCO
+3fKs8pVgcYY/5gLs7ZIR5YsB8czLkI7nwbm89Ci/EyzOF9WOMwH2dsozOv8b
+AXnbKXfrh78GxK9Dduj1g8HiPDS5NtFvIvbTLkf0+b9ErN8mF/W+1yLWa5Wr
+cEy0OP9SbzwXMV+zvKRf/ysi/5okKr8X4Z9GeVn5/Whx/rqueznC/qygJucj
+6rFeanVciLCvlnwtWpx/pvMsRsSjWtbrvm7Sniq5XXmZnJG9en8mWZxP6ViV
+kEdL4Ta9vzohjovkGvI1cm2yOD+s89Yl+GM+HNDr9Qn2XSFnyXPkhmRxrlJ7
+mtKi2vNu+Kzuozkh7/5BbkmI62lya7I479F529Jhvf9wUH2aak/f1evPBdWp
+jR3ppl5/OirPdCSLM+LUme7Q/RyPOt+hznSn8sm4X+/rTLDzFHhbLh3U6+ci
+7MklizvWz6fTOl4AX8qns8r/YVy7Esa5aLrL66L27Ss4Y38lNh01Rp6WGHVW
+YtNJYx12lRh5V2LTxbL1pkoMPS2x6WDZ+jPrnKE3w86me+X7H3JGXg06m84Z
+o84GnKG//c6ma+X+KzHytNfZdKzcHyVGnXRX2NdV7s9bRtiXL/fXqk4ZIx6d
+zqi7Epsulfu/3fmG2tdaYU+LcxH14/xlnaCxYn8Nzsjveue/63p1Ff6scZ6E
+PjjfpetVVfhrJRhTj5wf0v1cdzYdMa7Rcd75Ezr/ZWfTDWPWnfNH9f63nU0n
+jFn3zhjPvlTxfax43vnzmN/Z6r5if873Yf/O5frexfPFgvM34R9n03Nj1NuK
+873wfzI2/TZG36hxPoP4OpteG6NPNTh/DfnjbPpsjPxucUb82pxNj42Z3xXz
+dTqb3hpDH3LO6F95Z44V7HqadP1TBZ5X80nz91hB9nAeXe+gnWtzqUj9neS6
+ds61fZkeF7nvk9Tjs7TT2Ow2vZ6t4DfJOs2T49xPazI9N7/q8MVx9/sU9X0H
+43KA+p4Yx/3kAxX8Atn6wbO3xn21H1ieqN33j3keFdkfNjPP9rI/BOblNHl9
+BY+QrZ+0k62flOW9jHpdTLC/3MW6OcP+crGsv4543c2SnyFbP/oheYr96Les
+Y/TvdV7nK7f2p12vb/o5+9M9ZeeLYdeRafIRsvWzlp1g62emSzh/DLlu7Wd/
+u5e6toX9bR91sEg2XdxMfpFs/fDP5Fn2w9upsxq/3IDr8BT74xbqNPzcLwtl
+ut5f8d7QJziX1Xo/rSdbP7W+gXzv9b4yyf66k33nRfbXAfap/WTrWzPkSbL1
+4zvIRfZj1hPqZPX90frkLPsz61G+yv48wr67k2x9eIpMXfF+vr6iT5fp0768
+30fd8HXtuT+U2ZFzO2wds9P2YX6hrrhf1e+7Ot3vZpfF8TTt/hTz4CTZ8mKW
+bHljftpS9n27n7vgr7aKc1mbWF1YHF5nXd1GtjqzuJ0gW1xPke08YnWP/Tf5
+OdPyxHTmF8yj56lTe8mmW3vIpmuWd6aDlpemo9DNej83n+D5Zg91vJp5DXvt
+nF37f30EYwv7p53vm2VDyyur/3IJY5P3CYyN8sDWtb/OhLGR++1Itu8rm45e
+3XS0PT36+Lur/7LeN+CXLP3Rlu5RO7Kit19tSXr7o/XeFxCHOvn+9r7d2/ua
+0iu6oTqev7PJ6lsf35RN+vjjNd4nsG6NfEPXrUt/0uvVsjbb7u21Sc3bUO19
+Af6rEl1ud1X6sN6Qkd/rc8vR9Ad2L8Wnn1r7Ww7WJxDX5fBrHRfj59SOpYB9
+/TfqNo/eCNYXoEeLAX66HD+mhlwLf9N1LkTTS+z3fNShbyFYn8D72wfhCV3v
+XERez4fv6HxvRfjlarC+gPy9zPmeiBjnQoMG9nAwPZ/Xfb4W4O8LwfoE3svf
+C8f4+0SL7v98UHds/aePNg/q8O1g67yq+zkTbJ82r9ll65rdyJNj4ePqx+sh
+y32aHxGfFPx8joQJGxi3DtppcTc/WJ58RB10xH93wO8uR+Mndb06qdfpjkfL
+y0foV8tz/M5zNm5lHTyp+XAuWh1ZnJrhSOlhHE1P8DvTv+OX1E+tcoRxf1lv
+b5fvqV/ej6Z38MtcRL10yLeZN8ijnJ834O+c3Kl+mI+mz3gv+yBizMsP1I4F
+5mVeLE+tL8Cv1yPi1i2/0hsWmec9fj5Ss5/qEasL6xN4j12KeP/qld+xjhDv
+PsGYSdYXMGbSg2pAvzzIOkR9Dnidwv4B6kZ1sj6BsSbh/XCQ74k1Cf4Y8rq3
+voCxLkGvhqlbdTx/rnMdgf0j8ip1xvoExmzC++sI32OzCfkwKvBLQ7K+gLg3
+UsfGXNeQtmOue8jfMepQs59vEZdm2jvO301NN8ddR9HfS+dv6xOYp5W6V6A/
+2vx9AOcesv0uvqrb0JOCzFPXy/tIR/of9DjLIQ==
+    "], {{}, {}, 
+     TagBox[
+      TooltipBox[
+       {RGBColor[0.368417, 0.506779, 0.709798], AbsoluteThickness[1.6], 
+        LineBox[{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 
+         18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 
+         35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 
+         52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 
+         69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 
+         86, 87, 88}]},
+       RowBox[{
+         RowBox[{
+           RowBox[{"-", "x"}], "+", "y"}], "\[Equal]", "4"}]],
+      Annotation[#, -$CellContext`x + $CellContext`y == 4, "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {RGBColor[0.880722, 0.611041, 0.142051], AbsoluteThickness[1.6], 
+        LineBox[{89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 
+         103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116,
+          117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 
+         130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143,
+          144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 
+         157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170,
+          171, 172, 173}]},
+       RowBox[{"y", "\[Equal]", "5"}]],
+      Annotation[#, $CellContext`y == 5, "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {RGBColor[0.560181, 0.691569, 0.194885], AbsoluteThickness[1.6], 
+        LineBox[CompressedData["
+1:eJwN0EVWQgEAAMD/7UT0Bl7JI/ieW72ZioDY2I1d2N0tKibMYi4wza0dLe1h
+EARtdNJFNzF6iJMgSS8p+uhngEGGGGaENKOMMc4Ek0wxzQyzzDHPAotkWGKZ
+FVZZY50NNtlimx2y7LLHPgcccsQxJ5xyxjkXXHLFNTfccsc9DzzyxDMvvPJG
+jnc++CTPF9/88Msf/xQIhIaUUEoZ5VRQSRXV1FBLHfVEaCBKI00UAaEFR4w=
+
+         "]]},
+       RowBox[{
+         RowBox[{
+           RowBox[{"2", " ", "x"}], "+", "y"}], "\[Equal]", "15"}]],
+      Annotation[#, 2 $CellContext`x + $CellContext`y == 15, "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {RGBColor[0.922526, 0.385626, 0.209179], AbsoluteThickness[1.6], 
+        LineBox[CompressedData["
+1:eJwV0MVWQgEAANHnN1jYgp2gKBJ2FwaCnSi2YqD+PtfFPWfWEy6Wc+81QRCU
+qBV11NNAIyGaaKaFVtpop4NOwkToopseeumjnwEGGWKYEUaJEmOMceJMMEmC
+KZKkSJNhmhlmmWOeBRZZYpkVVlljnQ022WKbLDvsssc+OQ7IU+CQI4454ZQz
+zrngkiuuuaHILXeUuOeBR5545oVX3vifXuaDT774psIPv/xRBSiAHbc=
+         "]]},
+       RowBox[{
+         RowBox[{
+           FractionBox["x", "2"], "+", "y"}], "\[Equal]", "1"}]],
+      Annotation[#, Rational[1, 2] $CellContext`x + $CellContext`y == 1, 
+       "Tooltip"]& ]}], 
+   CircleBox[{3.344813951249544, 2.3218527154171227`}, 2.6781472845828773`]},
+  AspectRatio->1,
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{Automatic, Automatic},
+  DisplayFunction->Identity,
+  Frame->{{True, True}, {True, True}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{
+   "ScalingFunctions" -> None, "TransparentPolygonMesh" -> True, 
+    "AxesInFront" -> True},
+  PlotRange->{{-5, 10}, {-5, 10}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.02]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.6664105449135933`*^9, 3.666411429695342*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.666410538460289*^9, 3.6664105397884693`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Naftna rafinerija", "Section"],
+
+Cell["\<\
+Rafinerija iz nafte tipov 1 in 2 me\[SHacek]a bencin in kurilno olje. Na \
+voljo ima 5000 sod\[CHacek]kov nafte tipa 1 s kvaliteto 10 in 10000 sod\
+\[CHacek]kov nafte tipa 2 s kvaliteto 5. Povpre\[CHacek]na kvaliteta bencina \
+mora biti vsaj 8, povpre\[CHacek]na kvaliteta kurilnega olja pa vsaj 6. Za \
+vsak dolar reklame za kurilno olje proda 10 sod\[CHacek]kov kurilnega olja po \
+ceni 20 dolarjev za sod\[CHacek]ek, za vsak dolar reklame za bencin pa 5 sod\
+\[CHacek]kov bencina po ceni 25 dolarjev za sod\[CHacek]ek. Kako naj name\
+\[SHacek]a nafto, da bo iztr\[ZHacek]ila \[CHacek]imve\[CHacek] \
+dobi\[CHacek]ka?\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell["Re\[SHacek]itev", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Maximize", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"25", "-", 
+          RowBox[{"1", "/", "5"}]}], ")"}], 
+        RowBox[{"(", 
+         RowBox[{"b1", "+", "b2"}], ")"}]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"20", "-", 
+          RowBox[{"1", "/", "10"}]}], ")"}], 
+        RowBox[{"(", 
+         RowBox[{"k1", "+", "k2"}], ")"}]}]}], ",", 
+      RowBox[{
+       RowBox[{"b1", "+", "k1"}], "\[LessEqual]", "5000"}], ",", 
+      RowBox[{
+       RowBox[{"b2", "+", "k2"}], "\[LessEqual]", "10000"}], ",", 
+      RowBox[{
+       FractionBox[
+        RowBox[{
+         RowBox[{"10", "b1"}], "+", 
+         RowBox[{"5", "b2"}]}], 
+        RowBox[{"b1", "+", "b2"}]], "\[GreaterEqual]", "8"}], ",", 
+      RowBox[{
+       FractionBox[
+        RowBox[{
+         RowBox[{"10", "k1"}], "+", 
+         RowBox[{"5", "k2"}]}], 
+        RowBox[{"k1", "+", "k2"}]], "\[GreaterEqual]", "6"}], ",", 
+      RowBox[{"k1", "\[GreaterEqual]", "0"}], ",", 
+      RowBox[{"k2", "\[GreaterEqual]", "0"}], ",", 
+      RowBox[{"b1", "\[GreaterEqual]", "0"}], ",", 
+      RowBox[{"b2", "\[GreaterEqual]", "0"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"k1", ",", "k2", ",", "b1", ",", "b2"}], "}"}]}], "]"}], "//", 
+  "Timing"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"2.953125`", ",", 
+   RowBox[{"{", 
+    RowBox[{"323000", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"k1", "\[Rule]", "2000"}], ",", 
+       RowBox[{"k2", "\[Rule]", "8000"}], ",", 
+       RowBox[{"b1", "\[Rule]", "3000"}], ",", 
+       RowBox[{"b2", "\[Rule]", "2000"}]}], "}"}]}], "}"}]}], "}"}]], "Output",\
+
+ CellChangeTimes->{3.6664120360143185`*^9}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.666412025857463*^9, 3.6664120293264384`*^9}}],
+
+Cell["\<\
+\[CapitalCHacek]e neenakosti z enostavnim mno\[ZHacek]enjem spremenimo v \
+linearne, je re\[SHacek]itev znatno hitrej\[SHacek]a.\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Maximize", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"25", "-", 
+          RowBox[{"1", "/", "5"}]}], ")"}], 
+        RowBox[{"(", 
+         RowBox[{"b1", "+", "b2"}], ")"}]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"20", "-", 
+          RowBox[{"1", "/", "10"}]}], ")"}], 
+        RowBox[{"(", 
+         RowBox[{"k1", "+", "k2"}], ")"}]}]}], ",", 
+      RowBox[{
+       RowBox[{"b1", "+", "k1"}], "\[LessEqual]", "5000"}], ",", 
+      RowBox[{
+       RowBox[{"b2", "+", "k2"}], "\[LessEqual]", "10000"}], ",", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"10", "b1"}], "+", 
+        RowBox[{"5", "b2"}]}], "\[GreaterEqual]", 
+       RowBox[{"8", 
+        RowBox[{"(", 
+         RowBox[{"b1", "+", "b2"}], ")"}]}]}], ",", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"10", "k1"}], "+", 
+        RowBox[{"5", "k2"}]}], "\[GreaterEqual]", 
+       RowBox[{"6", 
+        RowBox[{"(", 
+         RowBox[{"k1", "+", "k2"}], ")"}]}]}], ",", 
+      RowBox[{"k1", "\[GreaterEqual]", "0"}], ",", 
+      RowBox[{"k2", "\[GreaterEqual]", "0"}], ",", 
+      RowBox[{"b1", "\[GreaterEqual]", "0"}], ",", 
+      RowBox[{"b2", "\[GreaterEqual]", "0"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"k1", ",", "k2", ",", "b1", ",", "b2"}], "}"}]}], "]"}], "//", 
+  "Timing"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0.`", ",", 
+   RowBox[{"{", 
+    RowBox[{"323000", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"k1", "\[Rule]", "2000"}], ",", 
+       RowBox[{"k2", "\[Rule]", "8000"}], ",", 
+       RowBox[{"b1", "\[Rule]", "3000"}], ",", 
+       RowBox[{"b2", "\[Rule]", "2000"}]}], "}"}]}], "}"}]}], "}"}]], "Output",\
+
+ CellChangeTimes->{3.666412053327013*^9}]
+}, Open  ]],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{3.6664120200289917`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Me\[SHacek]anje tonikov", "Section"],
+
+Cell[TextData[{
+ "Na voljo imamo zdravilne tonike A, B in C z vsebnostjo zdravilnh \
+u\[CHacek]inkovin I, II in III, podano v spodnji tabeli. Z me\[SHacek]anjem \
+tonikov \[ZHacek]elimo dobiti napitek, ki bo imel vsebnosti \
+u\[CHacek]inkovin, kot so navedene v zadnji vrstici tabele. Natan\[CHacek]nih \
+vrednosti ni mo\[CHacek] dose\[CHacek]i, zato za mero kvalitete \
+me\[SHacek]anice vzamemo po absolutni vrednosti najve\[CHacek]je odstopanje \
+posamezne u\[CHacek]inkovine od predpisane vrednosti (v me\[SHacek]anici, ki \
+vsebuje enak dele\[ZHacek] vsakega tonika, je ta vrednost enaka ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["2", "3"], TraditionalForm]]],
+ "). Kak\[SHacek]ni so dele\[ZHacek]i v najbolj\[SHacek]i me\[SHacek]anici?"
+}], "Text",
+ CellChangeTimes->{3.602345304174185*^9}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"\[NoBreak]", GridBox[{
+     {
+      StyleBox["tonik",
+       FontWeight->"Bold"], 
+      StyleBox["I",
+       FontWeight->"Bold",
+       FontSlant->"Plain"], 
+      StyleBox["II",
+       FontWeight->"Bold"], 
+      StyleBox["III",
+       FontWeight->"Bold"]},
+     {"A", "10", "2", "5"},
+     {"B", "15", "4", "2"},
+     {"C", "20", "3", "3"},
+     {"iskani", "15", "3", "4"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]"}], 
+  TraditionalForm]], "Text"],
+
+Cell[CellGroupData[{
+
+Cell["Re\[SHacek]itev", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Minimize", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Max", "[", 
+      RowBox[{
+       RowBox[{"Abs", "[", 
+        RowBox[{
+         RowBox[{"10", "a"}], "+", 
+         RowBox[{"15", "b"}], "+", 
+         RowBox[{"20", "c"}], "-", "15"}], "]"}], ",", 
+       RowBox[{"Abs", "[", 
+        RowBox[{
+         RowBox[{"2", "a"}], "+", 
+         RowBox[{"4", "b"}], "+", 
+         RowBox[{"3", "c"}], "-", "3"}], "]"}], ",", 
+       RowBox[{"Abs", "[", 
+        RowBox[{
+         RowBox[{"5", "a"}], "+", 
+         RowBox[{"2", "b"}], "+", 
+         RowBox[{"3", "c"}], "-", "4"}], "]"}]}], "]"}], ",", 
+     RowBox[{
+      RowBox[{"a", "+", "b", "+", "c"}], "\[Equal]", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", "b", ",", "c"}], "}"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   FractionBox["5", "18"], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", 
+      FractionBox["4", "9"]}], ",", 
+     RowBox[{"b", "\[Rule]", 
+      FractionBox["1", "6"]}], ",", 
+     RowBox[{"c", "\[Rule]", 
+      FractionBox["7", "18"]}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.666412372130129*^9}]
+}, Open  ]],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{3.666412366684781*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1280, 941},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"10.2 for Microsoft Windows (64-bit) (July 7, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "Info-66b47ace-1561-4394-9798-5bf339bf2584"->{
+  Cell[11632, 374, 7916, 116, 176, "Print",
+   CellTags->"Info-66b47ace-1561-4394-9798-5bf339bf2584"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"Info-66b47ace-1561-4394-9798-5bf339bf2584", 68227, 1725}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 40, 0, 70, "Section"],
+Cell[622, 24, 440, 7, 49, "Text"],
+Cell[CellGroupData[{
+Cell[1087, 35, 888, 24, 31, "Input"],
+Cell[1978, 61, 293, 8, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2308, 74, 37, 0, 49, "Subsection"],
+Cell[2348, 76, 661, 18, 31, "Input"],
+Cell[3012, 96, 113, 1, 52, "Input"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3174, 103, 53, 0, 70, "Section"],
+Cell[3230, 105, 146, 4, 31, "Text"],
+Cell[3379, 111, 444, 14, 114, "DisplayFormula"],
+Cell[CellGroupData[{
+Cell[3848, 129, 611, 18, 31, "Input"],
+Cell[4462, 149, 302, 10, 46, "Output"]
+}, Open  ]],
+Cell[4779, 162, 92, 1, 31, "Input"],
+Cell[CellGroupData[{
+Cell[4896, 167, 37, 0, 49, "Subsection"],
+Cell[CellGroupData[{
+Cell[4958, 171, 1526, 44, 112, "Input"],
+Cell[6487, 217, 2077, 42, 468, "Output"]
+}, Open  ]],
+Cell[8579, 262, 495, 16, 31, "Input"],
+Cell[9077, 280, 87, 1, 52, "Input"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9213, 287, 43, 0, 70, "Section"],
+Cell[9259, 289, 549, 8, 68, "Text"],
+Cell[9811, 299, 163, 6, 31, "Text"],
+Cell[CellGroupData[{
+Cell[9999, 309, 37, 0, 49, "Subsection"],
+Cell[CellGroupData[{
+Cell[10061, 313, 508, 17, 31, "Input"],
+Cell[10572, 332, 235, 7, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10844, 344, 501, 16, 31, "Input"],
+Cell[11348, 362, 118, 3, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11503, 370, 126, 2, 31, "Input"],
+Cell[11632, 374, 7916, 116, 176, "Print",
+ CellTags->"Info-66b47ace-1561-4394-9798-5bf339bf2584"]
+}, Open  ]],
+Cell[19563, 493, 89, 1, 52, "Input"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19701, 500, 68, 0, 70, "Section"],
+Cell[19772, 502, 260, 5, 30, "Text"],
+Cell[CellGroupData[{
+Cell[20057, 511, 37, 0, 49, "Subsection"],
+Cell[CellGroupData[{
+Cell[20119, 515, 4506, 120, 472, "Input"],
+Cell[24628, 637, 5354, 93, 376, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30043, 737, 41, 0, 70, "Section"],
+Cell[30087, 739, 425, 7, 49, "Text"],
+Cell[30515, 748, 2117, 65, 151, "Text"],
+Cell[CellGroupData[{
+Cell[32657, 817, 101, 1, 49, "Subsection"],
+Cell[CellGroupData[{
+Cell[32783, 822, 2136, 63, 147, "Input"],
+Cell[34922, 887, 177, 4, 46, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35136, 896, 1814, 48, 172, "Input"],
+Cell[36953, 946, 449, 13, 46, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37463, 966, 134, 1, 70, "Section"],
+Cell[37600, 969, 260, 5, 30, "Text"],
+Cell[37863, 976, 396, 13, 104, "DisplayFormula"],
+Cell[38262, 991, 650, 24, 48, "Text"],
+Cell[CellGroupData[{
+Cell[38937, 1019, 37, 0, 49, "Subsection"],
+Cell[CellGroupData[{
+Cell[38999, 1023, 1186, 40, 59, "Input"],
+Cell[40188, 1065, 344, 9, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[40569, 1079, 1683, 53, 112, "Input"],
+Cell[42255, 1134, 17533, 314, 375, "Output"]
+}, Open  ]],
+Cell[59803, 1451, 148, 2, 72, "Input"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[60000, 1459, 36, 0, 70, "Section"],
+Cell[60039, 1461, 643, 10, 68, "Text"],
+Cell[CellGroupData[{
+Cell[60707, 1475, 37, 0, 49, "Subsection"],
+Cell[CellGroupData[{
+Cell[60769, 1479, 1362, 41, 75, "Input"],
+Cell[62134, 1522, 406, 12, 31, "Output"]
+}, Open  ]],
+Cell[62555, 1537, 94, 1, 31, "Input"],
+Cell[62652, 1540, 152, 3, 30, "Text"],
+Cell[CellGroupData[{
+Cell[62829, 1547, 1410, 43, 52, "Input"],
+Cell[64242, 1592, 398, 12, 31, "Output"]
+}, Open  ]],
+Cell[64655, 1607, 89, 1, 52, "Input"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[64793, 1614, 42, 0, 70, "Section"],
+Cell[64838, 1616, 797, 14, 80, "Text"],
+Cell[65638, 1632, 862, 28, 105, "Text"],
+Cell[CellGroupData[{
+Cell[66525, 1664, 37, 0, 49, "Subsection"],
+Cell[CellGroupData[{
+Cell[66587, 1668, 813, 25, 31, "Input"],
+Cell[67403, 1695, 369, 12, 46, "Output"]
+}, Open  ]],
+Cell[67787, 1710, 87, 1, 52, "Input"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

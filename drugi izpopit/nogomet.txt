@@ -1,0 +1,7 @@
+Cicibani    : Rdeèi vragi : 2 : 2
+Vijolice    : Cicibani    : 0 : 2
+Rdeèi vragi : Pitoni      : 0 : 0
+Pitoni      : Rdeèi vragi : 1 : 1
+Vijolice    : FMF 2015    : 3 : 1
+Pitoni      : Cicibani    : 1 : 1
+FMF 2015    : Vijolice    : 2 : 1
